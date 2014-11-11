@@ -10,9 +10,9 @@
 function os2web_meetings_taxonomy_default_vocabularies() {
   return array(
     'os2web_meetings_tax_committee' => array(
-      'name' => 'Committee',
+      'name' => 'OS2Web Meetings: Committees',
       'machine_name' => 'os2web_meetings_tax_committee',
-      'description' => 'Udvalg',
+      'description' => 'The committee having the meeting.',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
@@ -33,9 +33,9 @@ function os2web_meetings_taxonomy_default_vocabularies() {
       ),
     ),
     'os2web_meetings_tax_location' => array(
-      'name' => 'Lokation',
+      'name' => 'OS2Web Meetings: Locations',
       'machine_name' => 'os2web_meetings_tax_location',
-      'description' => '',
+      'description' => 'The location where the meeting took place.',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
@@ -56,9 +56,9 @@ function os2web_meetings_taxonomy_default_vocabularies() {
       ),
     ),
     'os2web_meetings_tax_status' => array(
-      'name' => 'Meeting status',
+      'name' => 'OS2Web Meetings: Status',
       'machine_name' => 'os2web_meetings_tax_status',
-      'description' => 'represents the current of the meeting',
+      'description' => 'Represents the current status of the meeting.',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,

@@ -3,70 +3,40 @@ OS2Web Meetings
 
 Description
 -----------
-This module provides contenttypes and views to display meetings from mm.
+A light feature for import and presentation of meeting agendas and summaries.
+This feature contains content types, vocabularies and views. This version of
+the OS2Web Meetings feature does not depend on OS2Web core.
+
+A cron job generates search data on updated meetings and store this data on
+the meeting nodes. The search data is generated from bullet titles and body of
+meeting bullet attachments.
 
 Dependencies
 -----------
-- autocomplete_deluxe
-- better_exposed_filters
-- computed_field
-- ctools
-- date
-- ds
-- entity
-- entityreference
-- expire
-- features
-- file
-- lightbox2
-- link
-- list
-- menu
-- node_reference
-- number
-- options
-- os2web_qbrick
-- page_manager
-- print
-- print_pdf
-- rules
-- strongarm
-- taxonomy
-- text
-- views
-- views_php
+Date
+Entity Reference
+Features
+File
+List
+Node Reference
+Number
+Strongarm
+Taxonomy
+Views
 
 Installation
 -----------
 This module should reside in the modules directory of the installation,
-most commonly profiles/os2web/modules/, but alternativly in sites/all/modules
+most commonly profiles/os2web/modules/, but alternately in sites/all/modules
 (This could be for development purposes).
 
-See https://github.com/syddjurs/os2web/wiki for further instructions.
+Setup the cron job to update meeting search data on changed meetings.
+
+See https://github.com/OS2web/os2web/wiki for further instructions.
 
 This module can also be installed with drush make in your install profile.
-
-Licence and copyright
----------------------
-OS2Web is Copyright (c) 2012 Syddjurs Kommune, Denmark
-
-OS2Web is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-OS2Web is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Additional Info
 ---------------
 This repository should be governed using Git Flow. for more information see
 http://nvie.com/posts/a-successful-git-branching-model/
-
-Note: This module is still dependant on modules in the full OS2Web suite
-(https://github.com/OS2web/os2web), as the seperation of those are still WIP.
