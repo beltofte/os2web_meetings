@@ -9,14 +9,6 @@
  */
 function os2web_meetings_ctools_plugin_api() {
   list($module, $api) = func_get_args();
-  if ($module == "ds" && $api == "ds") {
-    return array("version" => "1");
-  }
-  list($module, $api) = func_get_args();
-  if ($module == "page_manager" && $api == "pages_default") {
-    return array("version" => "1");
-  }
-  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -34,36 +26,28 @@ function os2web_meetings_views_api() {
  */
 function os2web_meetings_node_info() {
   $items = array(
-    'os2web_meeting_search_status' => array(
-      'name' => t('Meeting search status'),
+    'os2web_meetings_bullet' => array(
+      'name' => t('Meetings: Bullet Point'),
       'base' => 'node_content',
-      'description' => t('Det nyeste element af dette indhold vises på dagsordens søge siden.'),
+      'description' => t('Bullet point on a meeting or agenda.'),
       'has_title' => '1',
       'title_label' => t('Overskrift'),
       'help' => '',
     ),
-    'os2web_meetings_bullet' => array(
-      'name' => t('Bullet Point'),
-      'base' => 'node_content',
-      'description' => '',
-      'has_title' => '1',
-      'title_label' => t('Titel'),
-      'help' => '',
-    ),
     'os2web_meetings_bullet_attach' => array(
-      'name' => t('Bullet Point Attachment'),
+      'name' => t('Meetings: Bullet Point Attachment'),
       'base' => 'node_content',
-      'description' => t('is an attachment to bullet point'),
+      'description' => t('An attachment to a meeting bullet point.'),
       'has_title' => '1',
-      'title_label' => t('Titel'),
+      'title_label' => t('Overskrift'),
       'help' => '',
     ),
     'os2web_meetings_meeting' => array(
-      'name' => t('Meeting'),
+      'name' => t('Meetings: Meeting'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('Meeting or agenda imported from an ESDH system.'),
       'has_title' => '1',
-      'title_label' => t('Titel'),
+      'title_label' => t('Overskrift'),
       'help' => '',
     ),
   );

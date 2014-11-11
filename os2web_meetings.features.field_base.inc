@@ -272,8 +272,8 @@ function os2web_meetings_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => '',
-        1 => 'Lukket punkt.',
+        0 => 'Lukket punkt',
+        1 => 'Åbent punkt',
       ),
       'allowed_values_function' => '',
     ),
@@ -370,10 +370,9 @@ function os2web_meetings_field_default_field_bases() {
       'allowed_values' => array(
         0 => array(
           'vocabulary' => 'os2web_meetings_tax_committee',
-          'parent' => 0,
+          'parent' => NULL,
         ),
       ),
-      'options_list_callback' => 'content_taxonomy_allowed_values',
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
@@ -401,6 +400,7 @@ function os2web_meetings_field_default_field_bases() {
         'second' => 0,
         'year' => 'year',
       ),
+      'repeat' => 0,
       'timezone_db' => 'UTC',
       'todate' => 'optional',
       'tz_handling' => 'site',
@@ -431,6 +431,7 @@ function os2web_meetings_field_default_field_bases() {
         'second' => 0,
         'year' => 'year',
       ),
+      'repeat' => 0,
       'timezone_db' => '',
       'todate' => 'optional',
       'tz_handling' => 'none',
@@ -470,36 +471,6 @@ function os2web_meetings_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_os2web_meetings_ext_url'
-  $field_bases['field_os2web_meetings_ext_url'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_os2web_meetings_ext_url',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'link',
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'rel' => '',
-        'target' => 'default',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-    ),
-    'translatable' => 0,
-    'type' => 'link_field',
-  );
-
   // Exported field_base: 'field_os2web_meetings_full_doc'
   $field_bases['field_os2web_meetings_full_doc'] = array(
     'active' => 1,
@@ -529,35 +500,6 @@ function os2web_meetings_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'file',
-  );
-
-  // Exported field_base: 'field_os2web_meetings_hex'
-  $field_bases['field_os2web_meetings_hex'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_os2web_meetings_hex',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 6,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
   );
 
   // Exported field_base: 'field_os2web_meetings_id'
@@ -628,29 +570,12 @@ function os2web_meetings_field_default_field_bases() {
       'allowed_values' => array(
         0 => array(
           'vocabulary' => 'os2web_meetings_tax_location',
-          'parent' => 0,
+          'parent' => NULL,
         ),
       ),
-      'options_list_callback' => 'content_taxonomy_allowed_values',
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
-  );
-
-  // Exported field_base: 'field_os2web_meetings_qbrickref'
-  $field_bases['field_os2web_meetings_qbrickref'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_os2web_meetings_qbrickref',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'os2web_qbrick',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'os2web_qbrick_movie',
   );
 
   // Exported field_base: 'field_os2web_meetings_searchdata'
@@ -660,31 +585,24 @@ function os2web_meetings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_os2web_meetings_searchdata',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'computed_field',
-    'settings' => array(
-      'code' => 'if (function_exists(\'_os2web_meetings_generate_search_data\')) {
-  $entity_field[0][\'value\'] = _os2web_meetings_generate_search_data($entity);
-} else {
-  $entity_field[0][\'value\'] = \'\';
-}',
-      'database' => array(
-        'data_default' => '',
-        'data_index' => 0,
-        'data_length' => 32,
-        'data_not_NULL' => 0,
-        'data_precision' => 10,
-        'data_scale' => 2,
-        'data_size' => 'normal',
-        'data_type' => 'longtext',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
       ),
-      'display_format' => '$display_output = $entity_field_item[\'value\'];',
-      'store' => 1,
     ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
     'translatable' => 0,
-    'type' => 'computed',
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_os2web_meetings_status'
@@ -713,10 +631,9 @@ function os2web_meetings_field_default_field_bases() {
       'allowed_values' => array(
         0 => array(
           'vocabulary' => 'os2web_meetings_tax_status',
-          'parent' => 0,
+          'parent' => NULL,
         ),
       ),
-      'options_list_callback' => 'content_taxonomy_allowed_values',
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
