@@ -108,7 +108,7 @@ function os2web_meetings_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_meetings_bul_closed',
-    'label' => 'Open bullet',
+    'label' => 'Closed',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
